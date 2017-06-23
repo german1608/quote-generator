@@ -3,20 +3,32 @@ html {
 }
 
 #title {
+  padding: 0 1rem;
   font-size: 2rem;
+}
+
+blockquote{
+  /*background-image: url(http://www.excellentamericanpainting.com/wp-content/uploads/2016/05/quote-mark.gif);*/
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-color: #90caf9;
+  position: relative;
 }
 
 .valign-wrapper {
   justify-content: center;
 }
 
-#submit-btn {
-  display: inline;
+#submit {
+  transition: background-color .75s linear;
 }
+
 @media only screen and (min-width: 601px) {
+  #title {
+    font-size: 4rem;
+  }
 
-}
-
-@media only screen and (min-width: 993px) {
-
+  blockquote {
+    font-size: 2rem;
+  }
 }
