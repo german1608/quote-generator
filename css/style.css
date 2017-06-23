@@ -32,3 +32,8 @@ blockquote{
     font-size: 2rem;
   }
 }
+
+.twitter-share-button {
+  background-color: #1b95e0; /*twitter color*/
+  color: #fff;
+}
