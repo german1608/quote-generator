@@ -6,18 +6,20 @@ function resizePage() {
 }
 
 function getQuote() {
+  var quote, author, quoteText,
+      // Colors for the page
+      r = Math.floor(Math.random() * 150),
+      g = Math.floor(Math.random() * 150),
+      b = Math.floor(Math.random() * 150),
+      tweetURL = `https://twitter.com/share?text=`, tweetContent;
   // Get a random quote from forismatic API and change the colors and content of the page.
   $.getJSON('http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en&jsonp=?', function(json) {
-      var quote = json.quoteText, // quote content
-          author = json.quoteAuthor ? json.quoteAuthor : "Anonymous", // quote author
-          r = Math.floor(Math.random() * 150), // Colors for the page
-          g = Math.floor(Math.random() * 150),
-          b = Math.floor(Math.random() * 150),
-          quoteText = `${quote}<br /><br /><span style="position: relative;bottom: .3rem;">-${author}</span>`; //content of the quote
-      
+      quote = json.quoteText; // quote content
+      author = json.quoteAuthor ? json.quoteAuthor : "Anonymous";
+      quoteText = `${quote}<br /><br /><span style="position: relative;bottom: .3rem;">-${author}</span>`; //content of the quote
+      tweetContent = `"${quote}" -${author}`; // Content of the tweet
       // First we fade out the blockquote
       $('blockquote').fadeOut(750, function() {
-
         // Then we change it's border and background color.
         $(this).css({
           'border-color': `rgb(${r}, ${g}, ${b})`, 
@@ -35,10 +37,14 @@ function getQuote() {
           $('button').removeClass('hide');
         }
 
+        // Set the link for the tweet
+        $('.twitter-share-button').attr('href', tweetURL + encodeURIComponent(tweetContent));
+        // console.log(tweetURL + encodeURIComponent(tweetContent + " codepen.io/german1608/full/pwrrNm/"));
         // Finally, we fade in the blockquote
         $(this).fadeIn(750);
       });
   });
+
 }
 
 $(document).ready(function(){
