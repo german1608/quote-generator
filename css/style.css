@@ -33,7 +33,11 @@ blockquote{
   }
 }
 
-.twitter-share-button {
+.twitter-share-button, .twitter-share-button:visited  {
   background-color: #1b95e0; /*twitter color*/
   color: #fff;
+}
+
+.twitter-share-button:hover{
+  background-color: #1BB4E0;
 }
