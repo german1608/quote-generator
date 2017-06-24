@@ -41,3 +41,9 @@ blockquote{
 .twitter-share-button:hover{
   background-color: #1BB4E0;
 }
+
+#fixed-content {
+  position: fixed;
+  bottom: 0%;
+  z-index: 999;
+}
