@@ -34,7 +34,7 @@ function getQuote() {
         // If is the first quote, the button will be hidden. We show it (to smooth start)
         if (firstTime) {
           firstTime = false;
-          $('button').removeClass('hide');
+          $('body').removeClass('hide');
         }
 
         // Set the link for the tweet
