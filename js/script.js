@@ -13,7 +13,7 @@ function getQuote() {
       b = Math.floor(Math.random() * 150),
       tweetURL = `https://twitter.com/share?text=`, tweetContent;
   // Get a random quote from forismatic API and change the colors and content of the page.
-  $.getJSON('http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en&jsonp=?', function(json) {
+  $.getJSON('https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en&jsonp=?', function(json) {
       quote = json.quoteText; // quote content
       author = json.quoteAuthor ? json.quoteAuthor : "Anonymous";
       quoteText = `${quote}<br /><br /><span style="position: relative;bottom: .3rem;">-${author}</span>`; //content of the quote
